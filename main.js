@@ -1,17 +1,11 @@
-const stringTest = "Hello World";
+const stringTest = "KKKlo World";
 
 let charCodeList = [];
 for (let i = 0; i < stringTest.length; i++) {
 	charCodeList.push(stringTest.charCodeAt(i));
 }
 
-console.log(charCodeList);
-
-// quantidade de caracteres dividido pela quantidade de letras
-const listSplitted = charCodeList.length / 3;
-
-// quantidade de caracteres arredondado
-const listSplittedRounded = Math.floor(listSplitted);
+const charCodeListBy3 = Math.floor(charCodeList.length / 3);
 
 let R = [];
 let G = [];
@@ -19,13 +13,13 @@ let B = [];
 
 let count = 1;
 for (let i = 0; i < charCodeList.length; i++) {
-	if (count <= listSplittedRounded) {
+	if (count <= charCodeListBy3) {
 		R.push(charCodeList[i]);
 		count++;
-	} else if (count <= listSplittedRounded * 2) {
+	} else if (count <= charCodeListBy3 * 2) {
 		G.push(charCodeList[i]);
 		count++;
-	} else if (count > listSplittedRounded * 2) {
+	} else if (count > charCodeListBy3 * 2) {
 		B.push(charCodeList[i]);
 		count++;
 	}
